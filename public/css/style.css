@@ -1,0 +1,122 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    color: black;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.input-box {
+    width: clamp(150px, 60vw, 600px);
+    height: 45px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+button {
+    width: 50px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 100%;
+    font-size: 1.2rem;
+}
+
+.task-box {
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 20px;
+    list-style: none;
+    width: clamp(150px, 60vw, 600px);
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #fff;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+li button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+li button:hover {
+    background-color: #0056b3;
+}
+
+li form button {
+    background-color: #dc3545;
+}
+
+li form button:hover {
+    background-color: #a71d2a;
+}
+
+
+.task-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.task-text.done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: aquamarine;
+    color: black;
+}
+
+.formbox {
+    margin-top: 10px;
+}
