@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-const port = 8080;
+const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 
@@ -44,6 +44,10 @@ app.post("/delete/:index", (req, res) => {
     }
 
     res.redirect("/");
+
+    app.listen(PORT, () => {
+        console.log(`Running on port ${PORT}`)
+    });
 });
 
 app.listen(port, () => {
