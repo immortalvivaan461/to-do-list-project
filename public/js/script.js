@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = currentText.replace(/^\d+\.\s*/, '');
         input.id = `edit-input-${index}`;
         input.style.fontSize = '1.5rem';
+        input.className='edit-input';
 
         task.parentNode.replaceChild(input, task);
 
