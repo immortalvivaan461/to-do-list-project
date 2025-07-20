@@ -49,16 +49,32 @@ button {
     width: clamp(150px, 60vw, 600px);
 }
 
+
 li {
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
+    gap: 10px;
     padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 12px;
     background-color: #fff;
-    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.edit-input {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"] {
@@ -67,7 +83,20 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-li button {
+.edit-input {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+
+li button,
+li form button {
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 1rem;
@@ -76,6 +105,10 @@ li button {
     color: white;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
+    max-width: 100px;
+    width: auto;
+    flex-shrink: 0;
 }
 
 li button:hover {
@@ -90,22 +123,35 @@ li form button:hover {
     background-color: #a71d2a;
 }
 
-
 .task-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 90%;
-    line-height: 1.4;
+    flex: 1 1 100%;
+    overflow-wrap: break-word;
     word-break: break-word;
+    max-width: 100%;
+    line-height: 1.4;
+    margin-bottom: 8px;
 }
 
 .task-text.done {
     text-decoration: line-through;
     color: gray;
     opacity: 0.7;
+}
+
+@media screen and (max-width: 480px) {
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    li button,
+    li form button {
+        width: 100%;
+    }
+
+    input[type="checkbox"] {
+        margin-top: 8px;
+    }
 }
 
 .footer {
